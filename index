@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compendium</title>
 
+    <!-- Typewriter-style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Special Elite', monospace;
+            background-color: #f4ecd8; /* warm parchment */
+            color: #3b2f2f; /* deep brown ink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #c2b59b;
+            background: #faf5e6;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 0;
+            opacity: 0.8;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            border: 1px solid #3b2f2f;
+            text-decoration: none;
+            color: #3b2f2f;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            background-color: #3b2f2f;
+            color: #f4ecd8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compendium</h1>
+        <p>An archive of readings, articles, reviews, or critics of a wide variety of topics</p>
+        <a href="library.html">Enter</a>
+    </div>
+</body>
+</html>
