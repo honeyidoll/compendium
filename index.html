@@ -23,6 +23,13 @@
             text-align: center;
         }
 
+        /* Page indentation wrapper */
+        .page {
+            max-width: 600px;
+            padding: 0 40px; /* LEFT + RIGHT INDENT */
+            box-sizing: border-box;
+        }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
@@ -102,19 +109,23 @@
 
 <body>
 
-    <!-- Honey Doll link at the TOP -->
-    <a class="small-link" 
-       href="https://honeyidoll.github.io/OTHER-REPOSITORY" 
-       target="_blank">
-        Honey Doll
-    </a>
+    <div class="page">
 
-    <h1>Compendium</h1>
+        <!-- Honey Doll link at the TOP -->
+        <a class="small-link" 
+           href="https://honeyidoll.github.io/OTHER-REPOSITORY" 
+           target="_blank">
+            Honey Doll
+        </a>
 
-    <!-- Typewriter definition -->
-    <div id="definition"></div>
+        <h1>Compendium</h1>
 
-    <a href="library.html">Enter</a>
+        <!-- Typewriter definition -->
+        <div id="definition"></div>
+
+        <a href="library.html">Enter</a>
+
+    </div>
 
     <!-- Typewriter Script -->
     <script>
