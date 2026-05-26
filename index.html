@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compendium</title>
 
     <!-- Typewriter-style font -->
@@ -16,30 +16,17 @@
             background-color: #f4ecd8; /* warm parchment */
             color: #3b2f2f; /* deep brown ink */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-
-        .container {
             text-align: center;
-            padding: 40px;
-            border: 2px solid #c2b59b;
-            background: #faf5e6;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            max-width: 600px;
         }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
             letter-spacing: 2px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-top: 0;
-            opacity: 0.8;
         }
 
         a {
@@ -56,14 +43,109 @@
             background-color: #3b2f2f;
             color: #f4ecd8;
         }
+
+        /* Honey Doll link styling */
+        .small-link {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: #5e0f0f; /* deep dark red */
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: 0.2s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .small-link:hover {
+            opacity: 1;
+            color: #8c1a1a;
+            text-decoration: underline;
+        }
+
+        /* Typewriter definition area */
+        #definition {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            min-height: 40px;
+            margin-top: 5px;
+            white-space: pre-wrap;
+        }
+
+        /* Flash animation for each letter */
+        .flash {
+            animation: flash 0.15s ease;
+        }
+
+        @keyframes flash {
+            0% { color: #000; }
+            50% { color: #c0392b; }
+            100% { color: #3b2f2f; }
+        }
+
+        /* Cursor styling */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            margin-left: 2px;
+            animation: blink 0.6s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Compendium</h1>
-        <p>An archive of readings, articles, reviews, or critics of a wide variety of topics</p>
-        <a href="library.html">Enter</a>
-    </div>
+
+    <!-- Honey Doll link at the TOP -->
+    <a class="small-link" 
+       href="https://honeyidoll.github.io/OTHER-REPOSITORY" 
+       target="_blank">
+        Honey Doll
+    </a>
+
+    <h1>Compendium</h1>
+
+    <!-- Typewriter definition -->
+    <div id="definition"></div>
+
+    <a href="library.html">Enter</a>
+
+    <!-- Typewriter Script -->
+    <script>
+        const text = "An archive of readings, articles, reviews, or critics of a wide variety of topics.";
+        let index = 0;
+
+        function typeWriter() {
+            const def = document.getElementById("definition");
+
+            // Remove old cursor if present
+            const oldCursor = document.querySelector(".cursor");
+            if (oldCursor) oldCursor.remove();
+
+            if (index < text.length) {
+                const span = document.createElement("span");
+                span.textContent = text.charAt(index);
+                span.classList.add("flash");
+                def.appendChild(span);
+
+                const cursor = document.createElement("span");
+                cursor.classList.add("cursor");
+                cursor.textContent = "|";
+                def.appendChild(cursor);
+
+                index++;
+                setTimeout(typeWriter, 45);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+
 </body>
 </html>
